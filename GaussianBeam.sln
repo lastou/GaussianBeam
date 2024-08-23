@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lens", "Lens.vcxproj", "{3C81E5F1-6650-40BB-8238-B619B7645807}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GaussianBeam", "GaussianBeam.vcxproj", "{3C81E5F1-6650-40BB-8238-B619B7645807}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

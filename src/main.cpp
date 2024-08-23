@@ -66,7 +66,7 @@ int main(int, char**)
 #endif
 
 	// Create window with graphics context
-	GLFWwindow* window = glfwCreateWindow(1280, 720, "Dear ImGui GLFW+OpenGL3 example", nullptr, nullptr);
+	GLFWwindow* window = glfwCreateWindow(1280, 720, "GaussianBeam", nullptr, nullptr);
 	if (window == nullptr)
 		return 1;
 	glfwMakeContextCurrent(window);
@@ -80,12 +80,13 @@ int main(int, char**)
 	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // Enable Docking
 	io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
+	io.IniFilename = NULL; // Disable .ini file
 	//io.ConfigViewportsNoAutoMerge = true;
 	//io.ConfigViewportsNoTaskBarIcon = true;
 
 	// Setup Dear ImGui style
-	ImGui::StyleColorsDark();
-	//ImGui::StyleColorsLight();
+	//ImGui::StyleColorsDark();
+	ImGui::StyleColorsLight();
 
 	// When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
 	ImGuiStyle& style = ImGui::GetStyle();
@@ -120,8 +121,8 @@ int main(int, char**)
 	//IM_ASSERT(font != nullptr);
 
 	// Our state
-	bool show_demo_window = false;
-	bool show_another_window = false;
+	//bool show_demo_window = false;
+	//bool show_another_window = false;
 	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
 	// Main loop
@@ -147,8 +148,8 @@ int main(int, char**)
 		ImGui::NewFrame();
 
 		// 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
-		if (show_demo_window)
-			ImGui::ShowDemoWindow(&show_demo_window);
+		// if (show_demo_window)
+		// 	ImGui::ShowDemoWindow(&show_demo_window);
 
 		// 2. Show a simple window that we create ourselves. We use a Begin/End pair to create a named window.
 		//{
@@ -174,14 +175,14 @@ int main(int, char**)
 		//}
 
 		// 3. Show another simple window.
-		if (show_another_window)
-		{
-			ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
-			ImGui::Text("Hello from another window!");
-			if (ImGui::Button("Close Me"))
-				show_another_window = false;
-			ImGui::End();
-		}
+		//if (show_another_window)
+		//{
+		//	ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
+		//	ImGui::Text("Hello from another window!");
+		//	if (ImGui::Button("Close Me"))
+		//		show_another_window = false;
+		//	ImGui::End();
+		//}
 
 		// Setup UI
 		window_ui::RenderUI();
@@ -221,4 +222,4 @@ int main(int, char**)
 	glfwTerminate();
 
 	return 0;
-}
+	}
